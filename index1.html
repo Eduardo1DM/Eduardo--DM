@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  nav img {
+    width: 80px;
+    transition: transform 0.3s ease;
+  }
+
+  nav img:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-link-hover {
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-hover:hover {
+    color: #ff9800; 
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.9)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+    .custom-slider-container {
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+}
+.tick {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.tick span {
+    font-size: 14px;
+    white-space: nowrap;
+}
+.card {
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 12px;
+  color: #555;
+}
+.slider-wrapper {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.form-range {
+  width: 100%;
+  margin-top: 20px;
+  appearance: none;
+  background: linear-gradient(90deg, #007bff 0%, #007bff 0%, #ddd 0%, #ddd 100%);
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-range:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background-color: #0056b3;
+}
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.ticks span {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+
+.footer {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.footer-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.footer-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f0ad4e;
+}
+
+.footer-section ul li span {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.footer-social {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.footer-social span {
+    margin-right: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social img {
+    width: 30px; 
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-button {
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .accordion-button:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #fff;
+      background-color: #007bff;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.125);
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      filter: invert(1);
+    }
+
+    .accordion-body {
+      font-size: 1rem;
+      padding: 1.5rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .accordion-collapse.collapsing {
+      transition: height 0.3s ease;
+    }
+</style>
+<body>
+  <!--header-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="imagenes/avianca.jpg" alt="Avianca" class="img-fluid"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" aria-current="page" href="index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index2.html">Aeropuertos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index3.html">Mapa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index6.html">Misión-Visión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index4.html">Noticias</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav> 
+  <!--fin header-->
+     <!--Acordeón-->
+</br>
+<div class="container my-4">
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item border rounded">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Clase Económica (Baja):
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Vuela con comodidad y a precios accesibles.</strong> En la Clase Económica de Avianca. Disfruta de nuestros modernos aviones con asientos diseñados para tu confort y un servicio amable que te acompañará a lo largo de tu viaje. Relájate con nuestro entretenimiento a bordo y elige entre una variedad de snacks y bebidas para hacer tu vuelo aún más placentero. ¡Viaja con nosotros y llega a tu destino sin comprometer tu presupuesto! (Baja).
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border rounded">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Clase Económica Plus (Media):
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Eleva tu experiencia de vuelo.</strong> Con nuestra Clase Económica Plus. Disfruta de mayor espacio para tus piernas, asientos más cómodos y una selección de alimentos y bebidas de cortesía. Con pantallas personales y una amplia oferta de entretenimiento, tu vuelo se convertirá en una experiencia más placentera y productiva. Además, tendrás la ventaja de llevar más equipaje sin preocupaciones. ¡Aprovecha este equilibrio perfecto entre comodidad y valor en tu próximo viaje! (Media).
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border rounded">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Clase Ejecutiva (Premium):
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <strong>Descubre el lujo de volar en nuestra Clase Ejecutiva.</strong> Disfruta de la exclusividad y el confort con asientos que se convierten en camas, servicio gourmet, y una selección de vinos finos. Relájate en nuestras salas VIP antes de tu vuelo y disfruta de un embarque prioritario. Con pantallas de alta definición y entretenimiento premium, tu viaje será tan placentero como tu destino. ¡Volar nunca ha sido tan elegante y cómodo! (Premium).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin Acordeón-->
+    <!--Asientos-->
+</br>
+</br>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/asiento1.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Clase Económica (Baja)</h5>
+            <span class="badge text-bg-primary">Descubre el mundo sin romper el bolsillo.</span>
+            <p class="card-text">Viaja cómodamente con nuestra Clase Económica, donde el confort y el ahorro se encuentran. Disfruta de un servicio eficiente y confiable que te lleva a tu destino sin complicaciones. ¡Reserva hoy y empieza tu aventura!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/asiento2.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Clase Económica Plus (Media)</h5>
+            <span class="badge text-bg-secondary">Más comodidad, más beneficios.</span>
+            <p class="card-text">Eleva tu experiencia de viaje con nuestra Clase Económica Plus. Disfruta de asientos más espaciosos, prioridad de embarque, y más comodidades para hacer de tu viaje una experiencia aún más agradable. Perfecto para aquellos que desean un poco más sin sacrificar la economía.</p>          
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="imagenes/asiento3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Clase Ejecutiva (Premium)</h5>
+            <span class="badge text-bg-success">Viaja con estilo y lujo incomparables.</span>
+            <p class="card-text">Nuestra Clase Ejecutiva te ofrece una experiencia de viaje de primera clase, con asientos completamente reclinables, acceso a salones VIP, y un servicio personalizado que supera todas tus expectativas. Relájate y disfruta de cada momento en el aire. ¡Reserva tu asiento en Clase Ejecutiva y transforma tu vuelo en una experiencia de lujo!</p>
+          </div>
+        </div>
+      </div>
+      <!--Fin Asientos-->
+      <!--Calificación-->
+      <div class="slider-wrapper">
+        <label for="customRange2" class="form-label">En qué asiento te gustaría viajar</label>
+        <div class="slider-container">
+          <input type="range" class="form-range" min="1" max="3" id="customRange2" value="1">
+          <div class="ticks">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+        </div>
+      </div>
+      
+      <!--fin Calificación-->
+     <!---footer-->
+  </br>
+</br>
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="imagenes/Avianca-logo.png" alt="Avianca Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+          <h3>Descubre y compra</h3>
+          <ul>
+              <li><a href="#">Vuelos baratos</a></li>
+              <li><a href="#">Reservas de hoteles</a> <span>🔗</span></li>
+              <li><a href="#">Alquiler de autos</a> <span>🔗</span></li>
+              <li><a href="#">Tours y excursiones</a> <span>🔗</span></li>
+              <li><a href="#">Asistencia en viaje</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+              <li><a href="#">Somos Avianca</a></li>
+              <li><a href="#">Trabaja con nosotros</a> <span>🔗</span></li>
+              <li><a href="#">Noticias corporativas</a></li>
+              <li><a href="#">Alianzas y beneficios</a></li>
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Plan de accesibilidad</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Nuestros portales</h3>
+          <ul>
+              <li><a href="#">Programa Lifemiles</a> <span>🔗</span></li>
+              <li><a href="#">Avianca Empresas</a> <span>🔗</span></li>
+              <li><a href="#">AviancaDirect</a></li>
+              <li><a href="#">Avianca Trade</a></li>
+              <li><a href="#">Avianca Cargo</a></li>
+              <li><a href="#">Relación con inversionistas</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+              <li><a href="#">Información legal</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Contrato de transporte</a></li>
+              <li><a href="#">Artículos restringidos</a></li>
+              <li><a href="#">Plan de contingencia</a></li>
+              <li><a href="#">Contáctanos</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-social">
+      <span>¡Síguenos!</span>
+      <a href="#"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagenes/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+
+<!--fin footer-->
+      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

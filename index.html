@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"  >
+  </head>
+  <body>
+    <!--header-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="imagenes/avianca.jpg" alt="Avianca" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" aria-current="page" href="index.html">Página Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index2.html">Aeropuertos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index3.html">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index6.html">Misión-Visión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index4.html">Noticias</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-3">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>   
+    <!--fin header-->
+    <!--carrusel-->
+    <div id="principal">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="imagenes/logo.jpg" class="d-block w-100" alt="Logo">
+              </div>
+              <div class="carousel-item">
+                  <img src="imagenes/avion1.jpeg" class="d-block w-100" alt="Avión 1">
+              </div>      
+              <div class="carousel-item">
+                  <img src="imagenes/avion2.jpg" class="d-block w-100" alt="Avión 2">
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      <div id="contenido">
+          <div class="container">
+              <div class="row align-items-center justify-content-center h-100">
+                  <div class="col-md-8 text-center">
+                      <h1>Avianca</h1>
+                      <p class="d-none d-md-block">Avianca, una de las aerolíneas más emblemáticas de América Latina, se ha destacado por ofrecer una experiencia de vuelo que combina tradición, innovación y un enfoque en el servicio al cliente. Con una historia que se remonta a 1919, Avianca es la segunda aerolínea más antigua del mundo en operación continua, lo que le otorga un prestigio único en la industria de la aviación.</p>
+                      <div class="btn-group mt-3">
+                          <a href="index1.html" class="btn btn-outline-light">Comodidad De Viaje</a>
+                          <a href="index5.html" class="btn btn-primary">Comprar Vuelo</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+   
+    <!--Fin carrusel-->
+    <!--Lista-->
+</br>
+</br>
+<header class="hero-section">
+  <h1>Información Esencial para Pasajeros de Avianca</h1>
+  <p>Conoce los aspectos clave sobre nuestros servicios y políticas para que tu experiencia de viaje sea más tranquila y segura.</p>
+</header>
+
+<div class="container">
+  <div class="section-header text-center">
+      <h2>Aspectos Clave</h2>
+      <p>Todo lo que necesitas saber para un viaje sin complicaciones.</p>
+  </div>
+  <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex align-items-start">
+          <span class="icon bi bi-clock-history"></span>
+          <div>
+              <div class="fw-bold">Retrasos de Vuelos:</div>
+              Los retrasos son una de las principales fuentes de frustración para los pasajeros. Incluye lo siguiente:
+              <ul>
+                  <li>Actualizaciones sobre el estado del vuelo a través de nuestro sitio web, aplicaciones móviles, y en el aeropuerto.</li>
+                  <li>Información sobre el tiempo estimado de retraso y razones del mismo.</li>
+                  <li>Opciones de comida y alojamiento en caso de retrasos prolongados.</li>
+                  <li>Asistencia de nuestro personal para resolver inquietudes y proporcionar alternativas.</li>
+                  <li>Compensación por retrasos extensos, según nuestras políticas y regulaciones.</li>
+              </ul>
+          </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start">
+          <span class="icon bi bi-wallet2"></span>
+          <div>
+              <div class="fw-bold">Compensaciones y Reembolsos:</div>
+              En caso de que tu vuelo sea cancelado o experimentes un problema significativo con nuestro servicio, Avianca tiene políticas claras para ofrecer compensaciones o reembolsos. Considera:
+              <ul>
+                  <li>Políticas de compensación económica por vuelos cancelados o problemas significativos.</li>
+                  <li>Opciones para cambiar tu vuelo sin costo adicional.</li>
+                  <li>Reembolso completo si decides no viajar debido a inconvenientes.</li>
+                  <li>Proceso de reclamación claro y accesible a través de nuestro equipo de atención al cliente.</li>
+                  <li>Información detallada disponible en nuestro sitio web y en el aeropuerto.</li>
+              </ul>
+          </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start">
+          <span class="icon bi bi-people-fill"></span>
+          <div>
+              <div class="fw-bold">Servicio al Cliente:</div>
+              Avianca se enorgullece de ofrecer un servicio al cliente accesible y eficiente. Si necesitas asistencia, ya sea antes, durante, o después de tu vuelo, considera:
+              <ul>
+                  <li>Soporte disponible por teléfono, chat en línea y redes sociales.</li>
+                  <li>Atención en varios idiomas para mayor comodidad.</li>
+                  <li>Línea de atención al cliente disponible las 24 horas.</li>
+                  <li>Asistencia personalizada en nuestras oficinas del aeropuerto.</li>
+                  <li>Resolución rápida de problemas y seguimiento de reclamaciones.</li>
+              </ul>
+          </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start">
+          <span class="icon bi bi-bag-fill"></span>
+          <div>
+              <div class="fw-bold">Equipaje Dañado o Extraviado:</div>
+              Sabemos lo importante que es tu equipaje. Si has experimentado daños o la pérdida de tu equipaje, te recomendamos:
+              <ul>
+                  <li>Reportar daños o pérdida del equipaje de inmediato en el aeropuerto o en línea.</li>
+                  <li>Completar un formulario de reclamación y hacer seguimiento del estado del equipaje.</li>
+                  <li>Recibir compensación por el retraso o daño del equipaje según nuestras políticas.</li>
+                  <li>Asistencia para localizar y devolver tus pertenencias en las mejores condiciones.</li>
+                  <li>Información sobre tus derechos y el proceso relacionado con el equipaje.</li>
+              </ul>
+          </div>
+      </li>
+      <li class="list-group-item d-flex align-items-start">
+          <span class="icon bi bi-universal-access"></span>
+          <div>
+              <div class="fw-bold">Accesibilidad y Asistencia Especial:</div>
+              En Avianca, nos comprometemos a brindar un viaje seguro y cómodo para todos nuestros pasajeros. Para aquellos que requieren asistencia especial:
+              <ul>
+                  <li>Ofrecemos servicios de accesibilidad, como sillas de ruedas y asistencia durante el embarque.</li>
+                  <li>Brindamos ayuda con el equipaje y asistencia personalizada según las necesidades.</li>
+                  <li>Es recomendable informar con antelación sobre necesidades especiales para garantizar una experiencia fluida.</li>
+                  <li>Nuestro personal está capacitado para ofrecer el apoyo necesario durante todo el viaje.</li>
+                  <li>Información detallada sobre los servicios disponibles y cómo solicitarlos.</li>
+              </ul>
+          </div>
+      </li>
+  </ol>
+</div>
+
+<!--fin Lista-->
+    <!--Contactanos-->
+</br>
+</br>
+<section id="contacto" class="container">
+  <div class="text-center">
+      <h1>Contacta Con La Mejor Aerolínea</h1>
+      <p>Tus dudas las solucionaremos</p>
+  </div>
+
+  <form class="row g-3 mt-4">
+      <div class="col-md-4">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+      </div>
+      <div class="col-md-4">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+      </div>
+      <div class="col-md-4">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="usuario" placeholder="Usuario" required>
+      </div>
+      <div class="col-md-6">
+          <label for="contrasena" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" required>
+      </div>
+      <div class="col-md-6">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
+      </div>
+      <div class="col-md-6">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" required>
+      </div>
+      <div class="col-md-3">
+          <label for="departamentos" class="form-label">Departamento</label>
+          <select class="form-select" id="departamentos" required>
+              <option selected disabled value=""></option>
+              <option>Francisco Morazán</option>
+              <option>Cortés</option>
+              <option>Atlántida</option>
+              <option>Colón</option>
+              <option>Yoro</option>
+              <option>Olancho</option>
+              <option>Santa Bárbara</option>
+              <option>Choluteca</option>
+              <option>Valle</option>
+              <option>Intibucá</option>
+              <option>Lempira</option>
+              <option>Ocotepeque</option>
+              <option>La Paz</option>
+              <option>Copán</option>
+              <option>El Paraíso</option>
+              <option>Gracias a Dios</option>
+              <option>Islas de la Bahía</option>
+              <option>Comayagua</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="sexo" class="form-label">Sexo</label>
+            <select class="form-select" id="sexo" required>
+                <option selected disabled value=""></option>
+                <option>Masculino</option>
+                <option>Femenino</option>
+                <option>Otro</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="consulta" class="form-label">Consulta</label>
+            <textarea class="form-control" id="consulta" rows="5" placeholder="Haz tus consultas"></textarea>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="terminos" required>
+                <label class="form-check-label" for="terminos">
+                    Acepto los términos y condiciones
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary w-100" type="submit">Enviar</button>
+        </div>
+    </form>
+</section>
+    <!--Fin contactanos-->
+    <!---footer-->
+  </br>
+</br>
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="imagenes/Avianca-logo.png" alt="Avianca Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+          <h3>Descubre y compra</h3>
+          <ul>
+              <li><a href="#">Vuelos baratos</a></li>
+              <li><a href="#">Reservas de hoteles</a> <span>🔗</span></li>
+              <li><a href="#">Alquiler de autos</a> <span>🔗</span></li>
+              <li><a href="#">Tours y excursiones</a> <span>🔗</span></li>
+              <li><a href="#">Asistencia en viaje</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+              <li><a href="#">Somos Avianca</a></li>
+              <li><a href="#">Trabaja con nosotros</a> <span>🔗</span></li>
+              <li><a href="#">Noticias corporativas</a></li>
+              <li><a href="#">Alianzas y beneficios</a></li>
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Plan de accesibilidad</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Nuestros portales</h3>
+          <ul>
+              <li><a href="#">Programa Lifemiles</a> <span>🔗</span></li>
+              <li><a href="#">Avianca Empresas</a> <span>🔗</span></li>
+              <li><a href="#">AviancaDirect</a></li>
+              <li><a href="#">Avianca Trade</a></li>
+              <li><a href="#">Avianca Cargo</a></li>
+              <li><a href="#">Relación con inversionistas</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+              <li><a href="#">Información legal</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Contrato de transporte</a></li>
+              <li><a href="#">Artículos restringidos</a></li>
+              <li><a href="#">Plan de contingencia</a></li>
+              <li><a href="#">Contáctanos</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-social">
+      <span>¡Síguenos!</span>
+      <a href="#"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagenes/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+
+<!--fin footer-->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"  ></script>
+  </body>
+</html>

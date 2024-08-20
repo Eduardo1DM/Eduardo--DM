@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  nav img {
+    width: 80px;
+    transition: transform 0.3s ease;
+  }
+
+  nav img:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-link-hover {
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-hover:hover {
+    color: #ff9800; 
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.9)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+  .card {
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 12px;
+  color: #555;
+}
+.btn-warning {
+  background-color: #f0ad4e;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ec971f;
+  transform: scale(1.05);
+}
+
+
+.footer {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.footer-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.footer-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f0ad4e;
+}
+
+.footer-section ul li span {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.footer-social {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.footer-social span {
+    margin-right: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social img {
+    width: 30px; 
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+<body>  
+<!--header-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="imagenes/avianca.jpg" alt="Avianca" class="img-fluid"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" aria-current="page" href="index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index2.html">Aeropuertos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index3.html">Mapa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index6.html">Misión-Visión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white nav-link-hover" href="index4.html">Noticias</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>    
+<!--fin header-->
+<!--Dirección-->
+</br>
+</br>
+    <div class="card w-50 mx-auto">
+      <img src="imagenes/Dirección.jpg" class="altura" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cómo llegar</h5>
+        <p class="card-text">Para llegar al Aeropuerto Internacional Ramón Villeda Morales desde el centro de San Pedro Sula, toma la Carretera CA-13 en dirección este hacia La Lima. Después de unos 12 kilómetros, sigue las señales que indican el desvío hacia el aeropuerto, aproximadamente 3 kilómetros antes de La Lima. El tiempo estimado de viaje es dependiendo del lugar que te encuentres.</p>
+        <a href="#" class="btn btn-warning" style="width: 100%;">Inciar indicaciones</a>
+      </div>
+    </div>    
+<!--fin Dirección-->
+<!---footer-->
+</br>
+</br>
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="imagenes/Avianca-logo.png" alt="Avianca Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+          <h3>Descubre y compra</h3>
+          <ul>
+              <li><a href="#">Vuelos baratos</a></li>
+              <li><a href="#">Reservas de hoteles</a> <span>🔗</span></li>
+              <li><a href="#">Alquiler de autos</a> <span>🔗</span></li>
+              <li><a href="#">Tours y excursiones</a> <span>🔗</span></li>
+              <li><a href="#">Asistencia en viaje</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+              <li><a href="#">Somos Avianca</a></li>
+              <li><a href="#">Trabaja con nosotros</a> <span>🔗</span></li>
+              <li><a href="#">Noticias corporativas</a></li>
+              <li><a href="#">Alianzas y beneficios</a></li>
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Plan de accesibilidad</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Nuestros portales</h3>
+          <ul>
+              <li><a href="#">Programa Lifemiles</a> <span>🔗</span></li>
+              <li><a href="#">Avianca Empresas</a> <span>🔗</span></li>
+              <li><a href="#">AviancaDirect</a></li>
+              <li><a href="#">Avianca Trade</a></li>
+              <li><a href="#">Avianca Cargo</a></li>
+              <li><a href="#">Relación con inversionistas</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+              <li><a href="#">Información legal</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Contrato de transporte</a></li>
+              <li><a href="#">Artículos restringidos</a></li>
+              <li><a href="#">Plan de contingencia</a></li>
+              <li><a href="#">Contáctanos</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-social">
+      <span>¡Síguenos!</span>
+      <a href="#"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagenes/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+
+<!--fin footer-->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

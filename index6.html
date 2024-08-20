@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    nav img {
+    width: 80px;
+    transition: transform 0.3s ease;
+  }
+
+  nav img:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-link-hover {
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-hover:hover {
+    color: #ff9800; 
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.9)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+  .caja, .caja1 {
+    background-color: #FF3333;
+    color: white;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caja:hover, .caja1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.caja, .caja1 {
+    flex: 1 1 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.footer-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.footer-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f0ad4e;
+}
+
+.footer-section ul li span {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.footer-social {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.footer-social span {
+    margin-right: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social img {
+    width: 30px; 
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+<body>
+    <!--header-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="imagenes/avianca.jpg" alt="Avianca" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" aria-current="page" href="index.html">Página Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index2.html">Aeropuertos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index3.html">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index6.html">Misión-Visión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index4.html">Noticias</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-3">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>   
+    <!--fin header-->
+      <!-- Misión y Visión -->
+</br>
+<section id="mision" class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4">
+        <div class="caja">
+          <h1>Misión</h1>
+          <p>La misión de Avianca se centra en ser un pilar esencial en la industria del transporte aéreo, ofreciendo un servicio que no solo cumple con las expectativas de sus pasajeros, sino que las supera de manera constante. Su propósito principal es garantizar que cada viaje se realice con la máxima seguridad, puntualidad y comodidad, lo cual se logra a través de un equipo altamente capacitado y comprometido con la excelencia operativa. Avianca busca conectar a sus clientes con el mundo de una manera eficiente y placentera, creando experiencias de viaje memorables que refuercen la lealtad de sus pasajeros. Además, la aerolínea se compromete a ser un motor de desarrollo para las comunidades en las que opera, aportando al crecimiento económico y social de la región, y siempre actuando con un fuerte sentido de responsabilidad social y ambiental, manteniendo a su vez un enfoque innovador.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 mb-4">
+        <div class="caja1">
+          <h1>Visión</h1>
+          <p>La visión de Avianca es ambiciosa y clara: posicionarse como la aerolínea líder en América Latina, reconocida no solo por la calidad de su servicio, sino también por su capacidad de innovación y su enfoque en la sostenibilidad. Avianca aspira a ser la primera opción para los viajeros que buscan una experiencia de vuelo que combine la calidez del servicio con la eficiencia y tecnología de vanguardia. Para lograrlo, la aerolínea está comprometida con la modernización continua de su flota, la implementación de prácticas sostenibles que minimicen su impacto ambiental, y la creación de alianzas estratégicas que le permitan expandir su red de rutas y mejorar la conectividad en la región. En su visión a largo plazo, Avianca se ve a sí misma como un actor global en la industria aérea, con una sólida presencia en los mercados internacionales, manteniendo siempre un crecimiento sostenido y responsable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin Misión y Visión-->
+      <!---footer-->
+  </br>
+</br>
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="imagenes/Avianca-logo.png" alt="Avianca Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+          <h3>Descubre y compra</h3>
+          <ul>
+              <li><a href="#">Vuelos baratos</a></li>
+              <li><a href="#">Reservas de hoteles</a> <span>🔗</span></li>
+              <li><a href="#">Alquiler de autos</a> <span>🔗</span></li>
+              <li><a href="#">Tours y excursiones</a> <span>🔗</span></li>
+              <li><a href="#">Asistencia en viaje</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+              <li><a href="#">Somos Avianca</a></li>
+              <li><a href="#">Trabaja con nosotros</a> <span>🔗</span></li>
+              <li><a href="#">Noticias corporativas</a></li>
+              <li><a href="#">Alianzas y beneficios</a></li>
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Plan de accesibilidad</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Nuestros portales</h3>
+          <ul>
+              <li><a href="#">Programa Lifemiles</a> <span>🔗</span></li>
+              <li><a href="#">Avianca Empresas</a> <span>🔗</span></li>
+              <li><a href="#">AviancaDirect</a></li>
+              <li><a href="#">Avianca Trade</a></li>
+              <li><a href="#">Avianca Cargo</a></li>
+              <li><a href="#">Relación con inversionistas</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+              <li><a href="#">Información legal</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Contrato de transporte</a></li>
+              <li><a href="#">Artículos restringidos</a></li>
+              <li><a href="#">Plan de contingencia</a></li>
+              <li><a href="#">Contáctanos</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-social">
+      <span>¡Síguenos!</span>
+      <a href="#"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagenes/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+
+<!--fin footer-->
+      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

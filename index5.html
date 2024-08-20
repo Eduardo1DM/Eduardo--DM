@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    nav img {
+    width: 80px;
+    transition: transform 0.3s ease;
+  }
+
+  nav img:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-link-hover {
+    transition: color 0.3s ease;
+  }
+
+  .nav-link-hover:hover {
+    color: #ff9800;
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.9)" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+.card {
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 12px;
+  color: #555;
+}
+.slider-wrapper {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.form-range {
+  width: 100%;
+  margin-top: 20px;
+  appearance: none;
+  background: linear-gradient(90deg, #007bff 0%, #007bff 0%, #ddd 0%, #ddd 100%);
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-range:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background-color: #0056b3;
+}
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.ticks span {
+  font-size: 14px;
+  color: #6c757d;
+}
+.footer {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.footer-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.footer-section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f0ad4e;
+}
+
+.footer-section ul li span {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.footer-social {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.footer-social span {
+    margin-right: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social img {
+    width: 30px; 
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contacto {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+#contacto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+#contacto .form-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+#contacto .form-control,
+#contacto .form-select {
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contacto .form-control:focus,
+#contacto .form-select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+#contacto .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contacto .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+<body>
+    <!--header-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="imagenes/avianca.jpg" alt="Avianca" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" aria-current="page" href="index.html">Página Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index2.html">Aeropuertos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index3.html">Mapa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index6.html">Misión-Visión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-link-hover" href="index4.html">Noticias</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-3">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>    
+    <!--fin header-->
+       <!--Vuelos-->
+    <section id="Vuelos" class="mt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center text-uppercase">
+              <small>Vuelo disponibles</small>
+              <h1>Promoción Desde San Pedro Sula</h1>
+              <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/san salvador.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">San Salvador</h5>
+                    <span class="badge text-bg-primary">Por trayecto desde USD 112.</span>
+                    <p class="card-text">Vuela a San Salvador y descubre una capital dinámica donde la modernidad se fusiona con la rica historia de El Salvador. Rodeada de imponentes volcanes, esta ciudad ofrece una vibrante vida urbana, mercados coloridos, y una deliciosa gastronomía local. Explora sus museos, plazas y el impresionante Parque Nacional El Boquerón, todo en un solo lugar.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/san jose costa rica.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">San José Costa Rica</h5>
+                    <span class="badge text-bg-secondary">Por trayecto desde USD 119.</span>
+                    <p class="card-text">Viaja a San José, el corazón de Costa Rica, y sumérgete en un destino lleno de cultura, arte y naturaleza exuberante. Desde sus museos y teatros hasta sus pintorescos mercados, esta ciudad es el punto de partida perfecto para explorar la biodiversidad del país. No te pierdas el animado ambiente de sus barrios y la calidez de su gente.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/ciudad de guatemala.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Ciudad De Guatemala</h5>
+                    <span class="badge text-bg-success">Por trayecto desde USD 128.</span>
+                    <p class="card-text">Descubre Ciudad de Guatemala, la vibrante capital de Guatemala, donde lo antiguo y lo moderno se encuentran en perfecta armonía. Pasea por sus avenidas llenas de historia, explora sus museos y disfruta de su diversa oferta cultural. Desde su impresionante arquitectura colonial hasta su vida nocturna, Ciudad de Guatemala te sorprenderá en cada esquina.</p>    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/cartagenaa.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Cartagena</h5>
+                    <span class="badge text-bg-danger">Por trayecto desde USD 154.</span>
+                    <p class="card-text">Vuela a Cartagena, la joya del Caribe colombiano, y sumérgete en una ciudad llena de historia, romance y belleza natural. Recorre sus calles empedradas y coloridas, visita sus fortalezas y relájate en sus paradisíacas playas. Cartagena es el destino perfecto para disfrutar de una mezcla única de cultura y mar.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/miami.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Miami</h5>
+                    <span class="badge text-bg-warning">Por trayecto desde USD 157.</span>
+                    <p class="card-text">Escápate a Miami, una ciudad donde el sol brilla todo el año y la diversión nunca termina. Con sus icónicas playas, vibrante vida nocturna y una mezcla única de culturas, Miami es el destino ideal para quienes buscan relajarse y disfrutar. Desde el Art Deco de South Beach hasta los modernos distritos de arte, Miami lo tiene todo.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/bogota.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Bogotá</h5>
+                    <span class="badge text-bg-info">Por trayecto desde USD 160.</span>
+                    <p class="card-text">Descubre Bogotá, la capital cultural de Colombia, una ciudad donde la historia, la modernidad y la innovación se unen para ofrecer una experiencia única. Desde el histórico barrio de La Candelaria hasta sus modernos rascacielos, Bogotá es un destino lleno de contrastes, rica gastronomía y un ambiente artístico vibrante.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/medellin.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Medellín</h5>
+                    <span class="badge text-bg-dark">Por trayecto desde USD 165.</span>
+                    <p class="card-text">Vuela a Medellín, la ciudad de la eterna primavera, famosa por su clima agradable, su transformación urbana y su espíritu innovador. Explora sus parques, museos y el icónico Metrocable, y descubre por qué esta ciudad ha sido reconocida como una de las más innovadoras del mundo. Medellín te espera con su calidez y hospitalidad.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/cali.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Cali</h5>
+                    <span class="badge text-bg-primary">Por trayecto desde USD 165.</span>
+                    <p class="card-text">Disfruta de Cali, la capital mundial de la salsa, donde la música, el baile y la alegría son parte de la vida diaria. Vive la emoción de sus vibrantes ritmos, recorre sus parques y avenidas, y sumérgete en la cultura caleña. Cali es el lugar perfecto para quienes buscan una experiencia llena de energía y diversión.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/guayaquiil.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Guayaquil</h5>
+                    <span class="badge text-bg-secondary">Por trayecto desde USD 172.</span>
+                    <p class="card-text">Explora Guayaquil, la perla del Pacífico ecuatoriano, una ciudad que combina la modernidad con una rica herencia histórica. Pasea por su icónico Malecón 2000, visita el barrio de Las Peñas y disfruta de la deliciosa gastronomía local. Guayaquil es el destino ideal para quienes buscan una mezcla de historia, cultura y paisajes impresionantes.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/Mexico.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Ciudad De México</h5>
+                    <span class="badge text-bg-success">Por trayecto desde USD 175.</span>
+                    <p class="card-text">Vive la energía de Ciudad de México, una metrópolis vibrante y diversa, llena de historia, cultura y tradición. Desde las antiguas pirámides de Teotihuacán hasta los modernos museos y galerías, esta ciudad ofrece una experiencia única en cada esquina. Disfruta de su rica gastronomía, su arte y su vida nocturna incomparable.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/quito.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Quito</h5>
+                    <span class="badge text-bg-danger">Por trayecto desde USD 184.</span>
+                    <p class="card-text">Descubre Quito, la joya colonial de los Andes, una ciudad que combina una arquitectura impresionante con paisajes naturales espectaculares. Recorrer sus calles adoquinadas es como viajar en el tiempo, con sus iglesias y plazas que cuentan historias de siglos pasados. Quito te espera con su belleza histórica y su cálida hospitalidad.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/lima.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Lima</h5>
+                    <span class="badge text-bg-warning">Por trayecto desde USD 193.</span>
+                    <p class="card-text">Vuela a Lima, la capital gastronómica de América, y déjate conquistar por su mezcla perfecta de historia, cultura y sabores únicos. Desde el encanto de su centro histórico hasta la sofisticación de sus modernos barrios, Lima es un destino que te sorprenderá. Disfruta de su reconocida cocina, sus museos y la impresionante vista del océano Pacífico.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/dallas.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Dallas</h5>
+                    <span class="badge text-bg-info">Por trayecto desde USD 219.</span>
+                    <p class="card-text">Explora Dallas, una ciudad dinámica en el corazón de Texas, donde la cultura moderna se une a las tradiciones del viejo oeste. Desde sus rascacielos en el centro hasta su vibrante escena artística, Dallas ofrece una experiencia diversa y emocionante. Visita sus museos, disfruta de su gastronomía y sumérgete en la auténtica cultura tejana.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/washingtoon.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Washington</h5>
+                    <span class="badge text-bg-dark">Por trayecto desde USD 295.</span>
+                    <p class="card-text">Descubre Washington, D.C., la capital de Estados Unidos, hogar de monumentos icónicos, museos de clase mundial y una rica historia. Recorre la majestuosa Avenida Pennsylvania, visita la Casa Blanca y explora los numerosos memoriales y museos que cuentan la historia de la nación. Washington, D.C. es el destino ideal para los amantes de la historia y la cultura.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/new york.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">New York</h5>
+                    <span class="badge text-bg-primary">Por trayecto desde USD 295.</span>
+                    <p class="card-text">Vuela a Nueva York, la ciudad que nunca duerme, y sumérgete en su energía inigualable. Desde la emblemática Estatua de la Libertad hasta las luces de Times Square, Nueva York ofrece infinitas posibilidades. Disfruta de su vibrante vida cultural, sus tiendas de clase mundial y su gastronomía diversa en esta ciudad global.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/santiago de chile.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Santiago De Chile</h5>
+                    <span class="badge text-bg-secondary">Por trayecto desde USD 317.</span>
+                    <p class="card-text">Conoce Santiago, la capital moderna de Chile, rodeada por la majestuosa cordillera de los Andes. Esta ciudad combina un desarrollo económico dinámico con una rica historia y cultura. Disfruta de su variada gastronomía, sus museos y la proximidad a viñedos y estaciones de esquí que hacen de Santiago un destino único.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/sao paulo.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">São Paulo</h5>
+                    <span class="badge text-bg-success">Por trayecto desde USD 352.</span>
+                    <p class="card-text">Explora São Paulo, la metrópolis vibrante de Brasil, donde la diversidad cultural y la vida urbana se encuentran en cada esquina. Desde su impresionante skyline hasta sus galerías de arte y restaurantes de renombre, São Paulo es un destino que ofrece una experiencia cosmopolita única. Disfruta de la energía de esta ciudad que nunca para.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/buenos aires.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Buenos Aires</h5>
+                    <span class="badge text-bg-danger">Por trayecto desde USD 352.</span>
+                    <p class="card-text">Descubre Buenos Aires, la elegante capital de Argentina, donde el tango, la arquitectura europea y la rica vida cultural crean un ambiente inigualable. Pasea por sus avenidas arboladas, visita sus cafés históricos y disfruta de su vibrante escena artística. Buenos Aires es un destino que te cautivará con su encanto y sofisticación.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/los angeles.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Los Ángeles</h5>
+                    <span class="badge text-bg-warning">Por trayecto desde USD 352.</span>
+                    <p class="card-text">Vuela a Los Ángeles, la capital mundial del entretenimiento, donde el sol, las playas y la diversidad cultural te esperan. Desde Hollywood hasta Santa Mónica, esta ciudad ofrece una amplia variedad de experiencias para todos los gustos. Descubre su escena artística, disfruta de su clima cálido y sumérgete en el estilo de vida californiano.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/madrid.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Madrid</h5>
+                    <span class="badge text-bg-info">Por trayecto desde USD 594.</span>
+                    <p class="card-text">Visita Madrid, la vibrante capital de España, donde la historia, la modernidad y una vida nocturna incomparable se encuentran en perfecta armonía. Pasea por sus majestuosas plazas, disfruta de su rica gastronomía y explora sus museos de clase mundial. Madrid es una ciudad que te invita a disfrutar cada momento.</p>         
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="imagenes/barcelona.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Barcelona</h5>
+                    <span class="badge text-bg-dark">Por trayecto desde USD 628.</span>
+                    <p class="card-text">Explora Barcelona, la joya del Mediterráneo, famosa por su arquitectura única, sus playas y su ambiente cosmopolita. Desde las obras maestras de Gaudí hasta sus encantadoras calles, Barcelona ofrece una experiencia cultural y visual inigualable. Disfruta de su gastronomía, su arte y el mar en esta ciudad vibrante y acogedora.</p>         
+                  </div>
+                </div>
+              </div>
+              </section>
+              </div>
+            </div>
+      <!--fin Vuelos-->
+       <!--Contactanos-->
+</br>
+</br>
+<section id="contacto">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <h1 class="display-4">Reserva Tu Vuelo Con La Mejor Aerolínea</h1>
+        <p class="lead">Consulta con nosotros y garantiza tu próxima aventura</p>
+      </div>
+    </div>
+    <form class="row g-3">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="departamento" class="form-label">Departamento</label>
+          <select class="form-select" id="departamento" required>
+            <option selected disabled value=""></option>
+              <option>Francisco Morazán</option>
+              <option>Cortés</option>
+              <option>Atlántida</option>
+              <option>Colón</option>
+              <option>Yoro</option>
+              <option>Olancho</option>
+              <option>Santa Bárbara</option>
+              <option>Choluteca</option>
+              <option>Valle</option>
+              <option>Intibucá</option>
+              <option>Lempira</option>
+              <option>Ocotepeque</option>
+              <option>La Paz</option>
+              <option>Copán</option>
+              <option>El Paraíso</option>
+              <option>Gracias a Dios</option>
+              <option>Islas de la Bahía</option>
+              <option>Comayagua</option>
+            </select>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="sexo" class="form-label">Sexo</label>
+            <select class="form-select" id="sexo" required>
+              <option selected disabled value=""></option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn btn-primary btn-lg px-5 py-3" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+    <!--Fin contactanos-->
+      <!--Calificación-->
+    </br>
+    <div class="slider-wrapper">
+      <label for="customRange2" class="form-label">Califíca el servicio de viaje</label>
+      <div class="slider-container">
+        <input type="range" class="form-range" min="0" max="5" id="customRange2" value="0" list="tickmarks">
+        <div class="ticks">
+          <span>0</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+        </div>
+      </div>
+    </div>
+    
+  <!--fin Calificación-->
+  <!---footer-->
+</br>
+</br>
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="imagenes/Avianca-logo.png" alt="Avianca Logo" class="footer-logo">
+      </div>
+      <div class="footer-section">
+          <h3>Descubre y compra</h3>
+          <ul>
+              <li><a href="#">Vuelos baratos</a></li>
+              <li><a href="#">Reservas de hoteles</a> <span>🔗</span></li>
+              <li><a href="#">Alquiler de autos</a> <span>🔗</span></li>
+              <li><a href="#">Tours y excursiones</a> <span>🔗</span></li>
+              <li><a href="#">Asistencia en viaje</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+              <li><a href="#">Somos Avianca</a></li>
+              <li><a href="#">Trabaja con nosotros</a> <span>🔗</span></li>
+              <li><a href="#">Noticias corporativas</a></li>
+              <li><a href="#">Alianzas y beneficios</a></li>
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Plan de accesibilidad</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Nuestros portales</h3>
+          <ul>
+              <li><a href="#">Programa Lifemiles</a> <span>🔗</span></li>
+              <li><a href="#">Avianca Empresas</a> <span>🔗</span></li>
+              <li><a href="#">AviancaDirect</a></li>
+              <li><a href="#">Avianca Trade</a></li>
+              <li><a href="#">Avianca Cargo</a></li>
+              <li><a href="#">Relación con inversionistas</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+              <li><a href="#">Información legal</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Contrato de transporte</a></li>
+              <li><a href="#">Artículos restringidos</a></li>
+              <li><a href="#">Plan de contingencia</a></li>
+              <li><a href="#">Contáctanos</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-social">
+      <span>¡Síguenos!</span>
+      <a href="#"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="imagenes/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+  </div>
+</footer>
+
+<!--fin footer-->
+      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
